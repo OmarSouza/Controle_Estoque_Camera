@@ -18,6 +18,7 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        this.setResizable(false);
     }
 
     /**
@@ -45,6 +46,11 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("Controle Do Estoque de Cameras");
 
         btnIncluir.setText("Incluir");
+        btnIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIncluirActionPerformed(evt);
+            }
+        });
 
         btnAlterar.setText("Alterar");
 
@@ -141,6 +147,11 @@ public class Home extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncluirActionPerformed
+        Inserir inserir = new Inserir();
+        inserir.setVisible(true);
+    }//GEN-LAST:event_btnIncluirActionPerformed
 
     /**
      * @param args the command line arguments

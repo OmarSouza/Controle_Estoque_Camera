@@ -18,7 +18,8 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
-        this.setResizable(false);
+        this.setResizable(false); //Bloqueia que o usuario possa aumentar o dimuir a tela
+        this.setLocationRelativeTo(null); //Posiciona o software no centro da tela.
     }
 
     /**
@@ -39,6 +40,7 @@ public class Home extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Home");
         setPreferredSize(new java.awt.Dimension(1000, 500));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -53,6 +55,11 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +148,7 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        int resposta = JOptionPane.showConfirmDialog(null, "Deseja Sair?", null, JOptionPane.YES_NO_CANCEL_OPTION);
+        int resposta = JOptionPane.showConfirmDialog(null, "Deseja Sair?", "Sair", JOptionPane.YES_NO_CANCEL_OPTION);
 
         if(resposta == 0){
             System.exit(0);
@@ -152,6 +159,11 @@ public class Home extends javax.swing.JFrame {
         Inserir inserir = new Inserir();
         inserir.setVisible(true);
     }//GEN-LAST:event_btnIncluirActionPerformed
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        Alterar alterar = new Alterar();
+        alterar.setVisible(true);
+    }//GEN-LAST:event_btnAlterarActionPerformed
 
     /**
      * @param args the command line arguments
